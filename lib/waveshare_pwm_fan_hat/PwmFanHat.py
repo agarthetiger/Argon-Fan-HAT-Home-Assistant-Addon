@@ -1,8 +1,8 @@
-import SSD1306
-import PCA9685
 import time
 import socket
 from PIL import Image,ImageDraw,ImageFont
+from . import SSD1306
+from . import PCA9685
 
 # Initialize oled
 oled = SSD1306.SSD1306()
