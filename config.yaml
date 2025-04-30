@@ -1,7 +1,7 @@
-name: "Waveshare PoE HAT (B)"
-description: "PoE HAT Support"
-version: "1.0.3"
-slug: "poe_hat"
+name: "Waveshare PWM Fan HAT"
+description: "PWM fan and display support for the Waveshare PWM fan HAT."
+version: "1.0.0"
+slug: "pwm_fan_hat"
 init: false
 host_network: true
 arch:
@@ -16,9 +16,9 @@ devices:
   - /dev/i2c-11
 options:
   fan_temp: 46
-  #delta_temp: 5
-  #sleep_duration: 30
+  delta_temp: 5
+  sleep_duration: 30
 schema:
   fan_temp: int
-  #delta_temp: int
-  #sleep_duration: int
+  delta_temp: int
+  sleep_duration: int

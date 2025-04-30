@@ -20,6 +20,6 @@ RUN \
   pip3 install --no-cache-dir smbus
 
 COPY bin/main.py /bin/main.py
-COPY lib/waveshare_POE_HAT_B/ /lib/waveshare_POE_HAT_B/
+COPY lib/waveshare_pwm_fan_hat/ /lib/waveshare_pwm_fan_hat/
 
 CMD [ "python", "./bin/main.py" ]

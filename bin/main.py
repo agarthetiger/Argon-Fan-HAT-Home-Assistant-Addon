@@ -9,27 +9,36 @@ if os.path.exists(libdir):
 
 import logging
 
-from waveshare_POE_HAT_B import POE_HAT_B
+from waveshare_pwm_fan_hat import PwmFanHat
 
- 
 logging.basicConfig(level=logging.INFO)
 
-POE = POE_HAT_B.POE_HAT_B()
+pfh = PwmFanHat.PwmFanHat()
 
 f = open("/data/options.json", "r")
 config = json.load(f)
 fan_temp = config["fan_temp"]
-"""
 delta_temp = config["delta_temp"]
 sleep_duration = config["sleep_duration"]
-"""
 f.close()
-        
-try:  
+
+try:
     while(1):
-        POE.POE_HAT_Display(fan_temp)
+        pfh.update(
+            fan_temp=fan_temp,
+            delta_temp=delta_temp,
+            sleep_duration=sleep_duration
+        )
         time.sleep(1)
-        
-except KeyboardInterrupt:    
+
+# except IOError as e:
+#     oled.Closebus()
+#     print(e)
+
+# except KeyboardInterrupt:
+#     print("ctrl + c:")
+#     oled.Closebus()
+
+except KeyboardInterrupt:
     print("ctrl + c:")
-    POE.FAN_OFF()
+    pfh.fan_off()

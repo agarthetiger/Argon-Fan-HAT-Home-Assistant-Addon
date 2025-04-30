@@ -1,4 +1,4 @@
 # https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
-name: Waveshare PoE-HAT (B) Home-Assistant Addon
-url: 'https://github.com/tgryphon/Waveshare-PoE-HAT-B-Home-Assistant-Addon'
-maintainer: tgryphon <info@tgryphon.com>
+name: Waveshare PWM Fan HAT Home-Assistant Addon
+url: 'https://github.com/agarthetiger/Waveshare-PWM-Fan-HAT-Home-Assistant-Addon'
+maintainer: agarthetiger
