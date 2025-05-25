@@ -1,18 +1,6 @@
-from . import PCA9685
-
-pwm = PCA9685.PCA9685(0x40, debug=False)
-pwm.setPWMFreq(80)
-
 class ArgonFanHat:
 
-    def __init__(self, fan_on_temp):
-        self.fan_on_temp = fan_on_temp
-        # self.fan_set(50)
 
-    def get_temp(self):
-        with open('/sys/class/thermal/thermal_zone0/temp', 'rt') as f:
-            temp = (int)(f.read() ) / 1000.0
-        return temp
 
     def fan_set(self, pwm_percent):
         pwm.setServoPulse(0, pwm_percent)

@@ -20,6 +20,5 @@ RUN \
   pip3 install --no-cache-dir smbus
 
 COPY bin/main.py /bin/main.py
-COPY lib/argon_fan_hat/ /lib/argon_fan_hat/
 
 CMD [ "python", "./bin/main.py" ]
