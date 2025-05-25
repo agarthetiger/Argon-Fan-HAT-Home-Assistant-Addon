@@ -1,7 +1,1 @@
 configuration:
-   fan_on_temp:
-     name: Minimun CPU Temperature
-     description: Minimum CPU temperature, above which the fan will start. Restart this Addon after changing to apply the updated value.
-   sleep_interval:
-     name: Temperature check interval
-     description: Pause for this duration (in seconds) between checking the CPU temperature. Restart this Addon after changing to apply the updated value.

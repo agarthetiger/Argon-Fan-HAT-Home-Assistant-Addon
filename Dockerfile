@@ -6,16 +6,11 @@ FROM $BUILD_FROM
 RUN \
   apk add --no-cache \
     python3 \
-    openjpeg \
-    tiff \
-    openblas-dev \
     py3-pip
 
-FROM python:3
+FROM python:3-slim
 RUN \
   pip install --upgrade pip && \
-  pip install --no-cache-dir pillow && \
-  pip install --no-cache-dir numpy && \
   pip3 install --no-cache-dir gpiod && \
   pip3 install --no-cache-dir smbus
 

@@ -11,9 +11,7 @@ ADDR_ARGONONEREG_DUTYCYCLE=0x80
 ADDR_ARGONONEREG_FW=0x81
 ADDR_ARGONONEREG_CTRL=0x86
 
-version = "v0.0.9"
-# fanconfig format is temp=pwm
-fanconfig = ["65=100", "55=55", "45=30"]
+version = "v0.0.10"
 
 logging.basicConfig(
     datefmt="%Y-%m-%d %H:%M",
