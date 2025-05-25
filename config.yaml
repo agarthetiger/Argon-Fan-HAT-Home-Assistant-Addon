@@ -1,6 +1,6 @@
 name: "Argon Fan HAT"
-description: "CPU temperature-based PWM fan control for the Argon Fan HAT."
-version: "0.0.13"
+description: "CPU temperature-based PWM fan control for the Argon Fan HAT"
+version: "1.0.0"
 slug: "argon_fan_hat"
 arch:
   - aarch64

@@ -11,7 +11,7 @@ ADDR_ARGONONEREG_DUTYCYCLE=0x80
 ADDR_ARGONONEREG_FW=0x81
 ADDR_ARGONONEREG_CTRL=0x86
 
-version = "v0.0.13"
+version = "v1.0.0"
 
 logging.basicConfig(
     datefmt="%Y-%m-%d %H:%M",
