@@ -1,4 +1,3 @@
 # https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
 name: Argon Fan HAT Home-Assistant Addon
 url: 'https://github.com/agarthetiger/Argon-Fan-HAT-Home-Assistant-Addon'
-maintainer: Andrew Garner

@@ -1,16 +1,8 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-# Install requirements for add-on
-
-RUN \
-  apk add --no-cache \
-    python3 \
-    py3-pip
-
-FROM python:3
-RUN \
-  pip install --upgrade pip && \
+RUN apk add --no-cache python3 py3-pip
+RUN pip3 install --upgrade pip3 && \
   pip3 install --no-cache-dir gpiod && \
   pip3 install --no-cache-dir smbus
 
