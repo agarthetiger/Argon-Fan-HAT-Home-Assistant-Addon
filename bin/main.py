@@ -1,44 +1,34 @@
-import time
-import sys
+import logging
 import os
 import json
+import sys
+import time
 
 libdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'lib')
 if os.path.exists(libdir):
     sys.path.append(libdir)
 
-import logging
-
-from waveshare_pwm_fan_hat import PwmFanHat
+from argon_fan_hat import ArgonFanHat
 
 logging.basicConfig(level=logging.INFO)
 
-pfh = PwmFanHat.PwmFanHat()
-
 f = open("/data/options.json", "r")
 config = json.load(f)
-fan_temp = config["fan_temp"]
-delta_temp = config["delta_temp"]
-sleep_duration = config["sleep_duration"]
+fan_on_temp = config["fan_on_temp"]
+sleep_interval = config["sleep_interval"]
 f.close()
+
+afh = ArgonFanHat.ArgonFanHat(fan_on_temp)
 
 try:
     while(1):
-        pfh.update(
-            fan_temp=fan_temp,
-            delta_temp=delta_temp,
-            sleep_duration=sleep_duration
-        )
-        time.sleep(1)
+        afh.set_fan_from_temp()
+        time.sleep(sleep_interval)
 
 # except IOError as e:
 #     oled.Closebus()
 #     print(e)
 
-# except KeyboardInterrupt:
-#     print("ctrl + c:")
-#     oled.Closebus()
-
 except KeyboardInterrupt:
     print("ctrl + c:")
-    pfh.fan_off()
+    afh.fan_50()
