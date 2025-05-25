@@ -20,7 +20,7 @@ logging.basicConfig(
     style="{",
 )
 
-logging.info(f"Starting Argon Fan HAT control AddOn ${version}")
+logging.info(f"Starting Argon Fan HAT control AddOn {version}")
 
 def argon_initialize_bus_obj():
     try:
@@ -83,7 +83,7 @@ def get_fan_speed_for_temp(temp):
 # Initialize I2C Bus
 bus = argon_initialize_bus_obj()
 
-logging.info(f"Initialised Argon Fan HAT control AddOn ${version}")
+logging.info(f"Initialised Argon Fan HAT control AddOn {version}")
 
 try:
     INITIALSPEEDVAL = 200   # ensures fan speed gets set during initialization (e.g. change settings)
