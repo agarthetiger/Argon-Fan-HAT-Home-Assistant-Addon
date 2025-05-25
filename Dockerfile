@@ -2,7 +2,9 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 RUN apk add --no-cache python3 py3-pip
-RUN pip install --upgrade pip && \
+FROM python:3
+RUN \
+  pip install --upgrade pip && \
   pip3 install --no-cache-dir gpiod && \
   pip3 install --no-cache-dir smbus
 
