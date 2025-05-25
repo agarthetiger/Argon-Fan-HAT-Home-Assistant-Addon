@@ -1,11 +1,12 @@
 from . import PCA9685
 
+pwm = PCA9685.PCA9685(0x40, debug=False)
+pwm.setPWMFreq(80)
+
 class ArgonFanHat:
 
     def __init__(self, fan_on_temp):
         self.fan_on_temp = fan_on_temp
-        self.pwm = PCA9685.PCA9685(0x40, debug=False)
-        self.pwm.setPWMFreq(80)
         self.fan_set(50)
 
     def get_temp(self):
@@ -14,7 +15,7 @@ class ArgonFanHat:
         return temp
 
     def fan_set(self, pwm_percent):
-        self.pwm.setServoPulse(0, pwm_percent)
+        pwm.setServoPulse(0, pwm_percent)
 
     def set_fan_from_temp(self):
         temp = self.get_temp()

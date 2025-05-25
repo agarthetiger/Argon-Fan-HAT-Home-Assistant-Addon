@@ -1,6 +1,6 @@
 name: "Argon Fan HAT"
 description: "PWM fan control for the Argon Fan HAT."
-version: "0.0.2"
+version: "0.0.3"
 slug: "argon_fan_hat"
 init: false
 host_network: false
