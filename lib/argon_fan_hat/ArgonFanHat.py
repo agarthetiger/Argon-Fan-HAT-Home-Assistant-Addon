@@ -7,7 +7,7 @@ class ArgonFanHat:
 
     def __init__(self, fan_on_temp):
         self.fan_on_temp = fan_on_temp
-        self.fan_set(50)
+        # self.fan_set(50)
 
     def get_temp(self):
         with open('/sys/class/thermal/thermal_zone0/temp', 'rt') as f:
@@ -20,7 +20,9 @@ class ArgonFanHat:
     def set_fan_from_temp(self):
         temp = self.get_temp()
 
-        if(temp > self.fan_on_temp): # Default is 40 (degrees C)
+        if(temp > 40): # Default is 40 (degrees C)
+            self.fan_set(20)
+        elif(temp > 45):
             self.fan_set(40)
         elif(temp > 50):
             self.fan_set(50)

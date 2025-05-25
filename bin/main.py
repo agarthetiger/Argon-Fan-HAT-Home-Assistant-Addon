@@ -18,7 +18,10 @@ fan_on_temp = config["fan_on_temp"]
 sleep_interval = config["sleep_interval"]
 f.close()
 
+version = "v0.0.5"
+print(f"Starting Argon Fan HAT control AddOn ${version}")
 afh = ArgonFanHat.ArgonFanHat(fan_on_temp)
+print(f"Initialised Argon Fan HAT control AddOn ${version}")
 
 try:
     while(1):
