@@ -23,7 +23,7 @@ fan_on_temp = config["fan_on_temp"]
 sleep_interval = config["sleep_interval"]
 f.close()
 
-version = "v0.0.5"
+version = "v0.0.6"
 logging.info(f"Starting Argon Fan HAT control AddOn ${version}")
 afh = ArgonFanHat.ArgonFanHat(fan_on_temp)
 logging.info(f"Initialised Argon Fan HAT control AddOn ${version}")
