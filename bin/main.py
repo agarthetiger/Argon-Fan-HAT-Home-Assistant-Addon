@@ -10,7 +10,12 @@ if os.path.exists(libdir):
 
 from argon_fan_hat import ArgonFanHat
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(
+    datefmt="%Y-%m-%d %H:%M",
+    format="{asctime} - {levelname} - {message}",
+    level=logging.INFO,
+    style="{",
+)
 
 f = open("/data/options.json", "r")
 config = json.load(f)
@@ -19,9 +24,9 @@ sleep_interval = config["sleep_interval"]
 f.close()
 
 version = "v0.0.5"
-print(f"Starting Argon Fan HAT control AddOn ${version}")
+logging.info(f"Starting Argon Fan HAT control AddOn ${version}")
 afh = ArgonFanHat.ArgonFanHat(fan_on_temp)
-print(f"Initialised Argon Fan HAT control AddOn ${version}")
+logging.info(f"Initialised Argon Fan HAT control AddOn ${version}")
 
 try:
     while(1):
